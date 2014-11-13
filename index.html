@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="Portfolio" xmlns:og="http://ogp.me/ns#">
+	<head>
+		<meta charset="utf-8">
+		<title>Jean-Michel Didon - Portfolio</title>
+
+		<!-- Facebook : OG Properties -->
+		<meta property="og:title" 		content="Portfolio - Jean-Michel Didon">
+		<meta property="og:type" 		content="website">
+		<meta property="og:image" 		content="/!\ PUT HERE THE LOGO /!\">
+		<meta property="og:url" 		content="http://www.jeanmichel-didon.com">
+		<meta property="og:description" content="Webdevelopper and student at HETIC. You can discover my work here !">
+		<meta property="og:locale" 		content="en_US">
+		<meta property="og:locale:alternate" content="fr_FR">
+		<meta property="og:site_name" 	content="Jean-Michel Didon - Portfolio">
+
+		<!-- Twitter cards -->
+		<meta name="twitter:card" content="summary">
+		<meta name="twitter:site" content="@JeanMichelDidon">
+		<meta name="twitter:creator" content="@JeanMichelDidon">
+
+		<!-- Other metas -->
+		<meta name="wot-verification" content="8a129a804a4766011eb6">
+		<meta name="description" content="Webdevelopper and student at HETIC. You can discover my work here !">
+		<meta name="HandheldFriendly" content="true">
+		<meta name="viewport" content="initial-scale=1.0">
+
+		<!-- Stylesheets -->
+		<link href='http://fonts.googleapis.com/css?family=Raleway:100,300,400,700' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" type="text/css" href="public/main.css">
+	</head>
+	<body ng-controller="Portfolio.MainCtrl as Main">
+
+		<main>
+			<div class="background-container">
+				<canvas id="canvas">The canvas element is not supported by your browser !</canvas>
+				<hgroup class="main-title">
+					<h1>
+						<span class="main-firstname">Jean-Michel</span>
+						<span  class="main-lastname">Didon</span>
+					</h1>
+					<h2>Frontend developper</h2>
+				</hgroup>
+			</div>
+
+			<!-- Scripts -->
+			<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.js"></script>
+			<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-route.min.js"></script>
+			<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular-resource.min.js"></script>
+			<script src="public/main.js"></script>
+			<script src="public/app.js"></script>
+		</main>
+
+
+	</body>
+</html>

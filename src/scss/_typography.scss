@@ -1,0 +1,34 @@
+/* -------------------- Fonts -------------------- */
+/* ------------------------------------------------------------------------------ */
+
+
+
+
+
+/* -------------------- Typography -------------------- */
+/* ------------------------------------------------------------------------------ */
+
+$sans: Raleway, Roboto, 'Helvetica Neue', sans-serif;
+$serif: Candara, serif;
+
+.small 		{ font-size: $base*.875;  	}
+.smaller 	{ font-size: $base*.75;   	}
+.smallest 	{ font-size: $base*.625;  	}
+.base 		{ font-size: $base;		  	}
+.big 		{ font-size: $base*1.25; 	}
+.bigger 	{ font-size: $base*1.75;	}
+.biggest 	{ font-size: $base*2; 		}
+.uppercase 	{ text-transform: uppercase; }
+
+.thin 		{ font-weight: 100; }
+.x-light 	{ font-weight: 200; }
+.light 		{ font-weight: 300; }
+.regular 	{ font-weight: 400; }
+.bold 		{ font-weight: 700; }
+.x-bold 	{ font-weight: 900; }
+
+html		{ font-family: $sans; font-size: 62.5%; } /* 1em = 10px */
+body		{ font-size: 1.6*$base; } /* Default font size : 16 px */
+h1			{ @extend .biggest; }
+h2			{ @extend .bigger; }
+a 			{ color: white; text-decoration: none; @include transitions(all, .1s, ease, 0); }
