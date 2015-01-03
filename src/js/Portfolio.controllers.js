@@ -7,8 +7,13 @@
 
 	Main.$inject = ['$scope'];
 
-	function Main ( $scope ) {
+	function Main($scope) {
 		var vm = this;
-		console.log('Yo', vm);
+
+		vm.doScroll = function(target, e) {
+			var body = navigator.userAgent.indexOf('Firefox') > -1 ? document.documentElement : document.body;
+			smoothScroll(body, target, 150);
+			e.preventDefault();
+		};
 	}
 })();

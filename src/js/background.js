@@ -193,6 +193,7 @@
 				BackgroundAnimation.canvas.ctx.beginPath();
 				BackgroundAnimation.canvas.ctx.arc(BackgroundAnimation.config.dots[i].x, BackgroundAnimation.config.dots[i].y, BackgroundAnimation.config.dots[i].radius, 0, Math.PI * 2, false);
 				BackgroundAnimation.canvas.ctx.fill();
+				BackgroundAnimation.canvas.ctx.imageSmoothingEnabled = true;
 
 				BackgroundAnimation.workers.linkDots(BackgroundAnimation.config.dots[i]);
 			}
@@ -205,11 +206,12 @@
 	/**
 	 *	Start/Stop the animation "on demand"
 	 */
-	window.addEventListener('keyup', function (e) {
-		if (e.which === 32) {
+	window.addEventListener('keydown', function (e) {
+		if (e.which === 32 && e.target === document.body) { // Space
 			BackgroundAnimation.init();
+			e.preventDefault();
 		}
-		else if (e.which === 27) {
+		else if (e.which === 27) { // Escape
 			BackgroundAnimation.stop();
 		}
 	});

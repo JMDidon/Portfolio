@@ -8,7 +8,7 @@
 /* -------------------- Typography -------------------- */
 /* ------------------------------------------------------------------------------ */
 
-$sans: Raleway, Roboto, 'Helvetica Neue', sans-serif;
+$sans: Lato, Raleway, Roboto, 'Helvetica Neue', sans-serif;
 $serif: Candara, serif;
 
 .small 		{ font-size: $base*.875;  	}
@@ -19,6 +19,7 @@ $serif: Candara, serif;
 .bigger 	{ font-size: $base*1.75;	}
 .biggest 	{ font-size: $base*2; 		}
 .uppercase 	{ text-transform: uppercase; }
+.headings	{ font-family: Raleway, Lato, sans-serif; @extend .uppercase; }
 
 .thin 		{ font-weight: 100; }
 .x-light 	{ font-weight: 200; }
@@ -29,6 +30,6 @@ $serif: Candara, serif;
 
 html		{ font-family: $sans; font-size: 62.5%; } /* 1em = 10px */
 body		{ font-size: 1.6*$base; } /* Default font size : 16 px */
-h1			{ @extend .biggest; }
-h2			{ @extend .bigger; }
+h1			{ @extend .biggest, .headings; }
+h2			{ @extend .bigger, .headings; }
 a 			{ color: white; text-decoration: none; @include transitions(all, .1s, ease, 0); }

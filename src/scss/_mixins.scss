@@ -1,6 +1,6 @@
 /* -------------------- Mixins -------------------- */
 /* ------------------------------------------------------------------------------ */
-	
+
 /*** Add prefix for transitions ***/
 // $property : on what property is applied the transition
 // $duration : the duration of the transition
@@ -91,11 +91,14 @@
 }
 
 .absolute-center-content {
-	position: absolute;
+	/*position: absolute;
 	top: 0; bottom: 0; left: 0; right: 0;
 	margin: auto;
 	width: 50%;
-	height: 50%;
+	height: 50%;*/
+
+	-webkit-transform: translate3d(-50%,-50%,0);
+	transform: translate3d(-50%,-50%,0);
 }
 
 .vertical-outer {
