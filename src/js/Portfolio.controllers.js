@@ -12,7 +12,7 @@
 
 		vm.doScroll = function(target, e) {
 			var body = navigator.userAgent.indexOf('Firefox') > -1 ? document.documentElement : document.body;
-			smoothScroll(body, target, 150);
+			smoothScroll(body, target, 300);
 			e.preventDefault();
 		};
 	}
