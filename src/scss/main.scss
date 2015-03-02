@@ -251,7 +251,166 @@ canvas {
 	figure {
 		width: 25vw;
 		height: calc(25vw * 0.57735026919);
+		figcaption {
+			height: calc(25vw * 0.57735026919);
+			line-height: calc(25vw * 0.57735026919);
+		}
 	}
+}
+
+/*.hexagon {
+	color: $dark-color;
+	background-image: url(http://www.placekitten.com/800/1280);
+	//background-color: #ee6633;
+	transition: all .33s ease-out;
+
+	line-height: calc(30vw * 0.57735026919);
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.33em;
+	font-family: Lato;
+	color: #f3f3f7;
+
+	.hover-background {
+		opacity: 0;
+		transition: .33s opacity ease-out;
+	}
+
+	&:hover .hover-background {
+		position: absolute;
+		top: 0; left: 0;
+		width: inherit;
+		height: inherit;
+		//background-image: none;
+		background-color: #ee6633;
+		opacity: 0.5;
+		transition: opacity .33s ease-out;
+		z-index: 2;
+
+		/*&:before,
+	    &:after {
+			content: '';
+			//position: absolute;
+			//top: 0; left: 0;
+			//width: 100%;
+			//height: 100%;
+			opacity: 0;
+			background: inherit;
+			z-index: -2;
+	    }
+
+	    &:before {
+			transform: rotate(60deg);
+	    }
+
+	    &:after {
+			transform: rotate(-60deg);
+	    }
+	}
+}*/
+
+/*.hexagon:hover.hover-background:after {
+	content: '';
+	transition: opacity .3s ease-out;
+}*/
+
+.hexagon {
+  display: block;
+  position: relative;
+  width: inherit;
+  height: inherit;
+  //background-image: url(http://www.placekitten.com/800/1280);
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  z-index: 1;
+
+  /* Text style */
+  figcaption {
+    display: block;
+    line-height: calc(25vw * 0.57735026919);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 0.33em;
+    font-family: Lato;
+    color: #f3f3f7;
+    transition: .33s opacity ease, .33s text-shadow ease;
+    z-index: 10;
+  }
+
+
+  /* Make the hexagon */
+  .hexagon-helper1,
+  .hexagon-helper2 {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    z-index: -1;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+  }
+
+  .hexagon-helper1:before,
+  .hexagon-helper2:before,  {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 200%;
+    background: inherit;
+    transition: .3s all ease-out;
+  }
+
+  .hexagon-helper1 {
+    -webkit-transform: rotate(60deg);
+            transform: rotate(60deg);
+    &:before {
+      content: '';
+      left: 0;
+      -webkit-transform-origin: left top;
+      -webkit-transform: rotate(-60deg) translate(-50%, 0);
+              transform-origin: left top;
+              transform: rotate(-60deg) translate(-50%, 0);
+    }
+  }
+
+  .hexagon-helper2 {
+    -webkit-transform: rotate(-60deg);
+            transform: rotate(-60deg);
+    &:before {
+      content: '';
+      right: 0;
+      -webkit-transform-origin: right top;
+      -webkit-transform: rotate(60deg) translate(50%, 0);
+              transform-origin: right top;
+              transform: rotate(60deg) translate(50%, 0);
+    }
+  }
+
+  /* Hover style */
+  .hover-background {
+    opacity: 0;
+    transition: .33s opacity ease;
+  }
+
+  &:hover {
+    transition: .33s all ease;
+    text-shadow: transparentize(#f3f3f7, .2) 0 0 1em;
+  }
+
+  &:hover .hover-background {
+    position: absolute;
+    top: 0; left: 0;
+    width: inherit;
+    height: inherit;
+    background-color: #ee6633;
+    opacity: 0.5;
+    transition: .33s opacity ease;
+    z-index: 2;
+  }
 }
 
 /* -------------------- Footer section -------------------- */
@@ -281,4 +440,101 @@ canvas {
 	margin-left: $base/2;
 	margin-right: $base/2;
 	margin-bottom: -$unit/2;
+}
+
+
+/* -------------------- Modal -------------------- */
+/* ------------------------------------------------------------------------------ */
+
+.modal-overlay {
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-around;
+	-webkit-flex-wrap: wrap;
+	-webkit-align-items: center;
+	-webkit-align-content: space-around;
+			justify-content: space-around;
+			flex-wrap: wrap;
+			align-items: center;
+			align-content: space-around;
+
+	position: fixed;
+	top: 0; left: 0; bottom: 0; right: 0;
+	width: 100%;
+	height: 100%;
+	opacity: 1;
+	z-index: 300;
+	background: rgba(0, 0, 0, 0.90);
+}
+
+.modal-overlay.ng-hide-add.ng-hide-add-active,
+.modal-overlay.ng-hide-remove.ng-hide-remove-active {
+	-webkit-transition: all .33s ease;
+			transition: all .33s ease;
+}
+
+.modal-overlay.ng-hide {
+	opacity: 0;
+}
+
+.modal-content {
+	width: 75%;
+	height: 100%;
+	margin: auto;
+	padding: 7.5*$unit 0;
+	overflow-y: auto;
+}
+
+
+.project-titles {
+	text-align: center;
+	color: $light-color;
+}
+
+.project-titles h1 {
+	@extend .bold;
+	font-family: $sans;
+	font-size: 5*$unit;
+	letter-spacing: 2.66*$unit;
+	text-indent: 2.66*$unit;
+}
+
+
+.project-titles h2 {
+	@extend .thin;
+	margin: 2*$unit 0 6*$unit 0;
+	font-family: $sans;
+	font-size: 3*$unit;
+	text-transform: none;
+}
+
+.project-description {
+	@extend .light;
+	max-width: 60*$unit;
+	margin: 0 auto;
+	line-height: 1.48;
+	font-size: 1.5*$unit;
+	white-space: pre-line;
+	text-align: justify;
+}
+
+.project-showcase img {
+	max-width: 100%;
+}
+
+.project-link {
+	@extend .uppercase;
+	display: block;
+	max-width: 25*$unit;
+	margin: 0 auto;
+	padding: 2*$base 3*$unit;
+	border: .3*$base solid $light-color;
+	text-align: center;
+	letter-spacing: .3*$base;
+	-webkit-transition: all .33s ease;
+			transition: all .33s ease;
+	&:hover {
+		background: $light-color;
+		color: $dark-color;
+	}
 }

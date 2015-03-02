@@ -5,14 +5,9 @@
 		.module('Portfolio')
 		.config(configure);
 
-	configure.$inject = ['$routeProvider', '$locationProvider'];
+	configure.$inject = ['$locationProvider'];
 
-	function configure( $routeProvider, $locationProvider ) {
-		$routeProvider.when('/', {
-			controller: 'Portfolio.MainCtrl',
-			controllerAs: 'Main'
-		});
-
+	function configure ( $locationProvider ) {
 		$locationProvider.html5Mode(true);
 	}
 })();

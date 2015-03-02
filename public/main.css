@@ -352,57 +352,65 @@ html {
 /* -------------------- Mixins -------------------- */
 /* ------------------------------------------------------------------------------ */
 /*** Add prefix for transitions ***/
-.hexagon {
-  display: block;
-  position: relative;
-  width: inherit;
-  height: inherit;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-.hexagon .hexagon-helper1,
-.hexagon .hexagon-helper2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  background: inherit;
-}
-.hexagon .hexagon-helper1:before,
-.hexagon .hexagon-helper2:before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 200%;
-  background: inherit;
-}
-.hexagon .hexagon-helper1 {
-  -webkit-transform: rotate(60deg);
-  transform: rotate(60deg);
-}
-.hexagon .hexagon-helper1:before {
-  content: '';
-  left: 0;
-  -webkit-transform-origin: left top;
-  -webkit-transform: rotate(-60deg) translate(-50%, 0);
-  transform-origin: left top;
-  transform: rotate(-60deg) translate(-50%, 0);
-}
-.hexagon .hexagon-helper2 {
-  -webkit-transform: rotate(-60deg);
-  transform: rotate(-60deg);
-}
-.hexagon .hexagon-helper2:before {
-  content: '';
-  right: 0;
-  -webkit-transform-origin: right top;
-  -webkit-transform: rotate(60deg) translate(50%, 0);
-  transform-origin: right top;
-  transform: rotate(60deg) translate(50%, 0);
-}
+/*.hexagon {
+	display: block;
+	position: relative;
+	width: inherit;
+	height: inherit;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 1;
+	background-image: url(public/img/projects/synappse.png);
+	//background-size: contain;
 
+	.hexagon-helper1,
+	.hexagon-helper2 {
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%;
+		height:100%;
+		overflow: hidden;
+		background: inherit;
+		z-index: -1;
+		-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
+	}
+
+	.hexagon-helper1:before,
+	.hexagon-helper2:before {
+		content: '';
+		position: absolute;
+		width: 100%;
+		height: 200%;
+		background: inherit;
+	}
+
+	.hexagon-helper1 {
+		-webkit-transform: rotate(60deg);
+				transform: rotate(60deg);
+		&:before {
+			content: '';
+			left: 0;
+			-webkit-transform-origin: left top;
+			-webkit-transform: rotate(-60deg) translate(-50%, 0);
+					transform-origin: left top;
+					transform: rotate(-60deg) translate(-50%, 0);
+		}
+	}
+
+	.hexagon-helper2 {
+		-webkit-transform: rotate(-60deg);
+				transform: rotate(-60deg);
+		&:before {
+			content: '';
+			right: 0;
+			-webkit-transform-origin: right top;
+			-webkit-transform: rotate(60deg) translate(50%, 0);
+					transform-origin: right top;
+					transform: rotate(60deg) translate(50%, 0);
+		}
+	}
+}*/
 .acceleration {
   /*-webkit-transform: translateZ(0);
   	-ms-transform: translateZ(0);
@@ -495,7 +503,7 @@ html {
   font-size: 2rem;
 }
 
-.uppercase, .headings, h1, h2, .main-nav-list li {
+.uppercase, .headings, h1, h2, .main-nav-list li, .project-link {
   text-transform: uppercase;
 }
 
@@ -503,7 +511,7 @@ html {
   font-family: Raleway, Lato, sans-serif;
 }
 
-.thin {
+.thin, .project-titles h2 {
   font-weight: 100;
 }
 
@@ -511,7 +519,7 @@ html {
   font-weight: 200;
 }
 
-.light {
+.light, .project-description {
   font-weight: 300;
 }
 
@@ -519,7 +527,7 @@ html {
   font-weight: 400;
 }
 
-.bold, .about-hello {
+.bold, .about-hello, .project-titles h1 {
   font-weight: 700;
 }
 
@@ -773,6 +781,155 @@ canvas {
   width: 25vw;
   height: calc(25vw * 0.57735026919);
 }
+.grid-unit figure figcaption {
+  height: calc(25vw * 0.57735026919);
+  line-height: calc(25vw * 0.57735026919);
+}
+
+		/*.hexagon {
+	color: $dark-color;
+	background-image: url(http://www.placekitten.com/800/1280);
+	//background-color: #ee6633;
+	transition: all .33s ease-out;
+
+	line-height: calc(30vw * 0.57735026919);
+	text-align: center;
+	text-transform: uppercase;
+	text-decoration: none;
+	letter-spacing: 0.33em;
+	font-family: Lato;
+	color: #f3f3f7;
+
+	.hover-background {
+		opacity: 0;
+		transition: .33s opacity ease-out;
+	}
+
+	&:hover .hover-background {
+		position: absolute;
+		top: 0; left: 0;
+		width: inherit;
+		height: inherit;
+		//background-image: none;
+		background-color: #ee6633;
+		opacity: 0.5;
+		transition: opacity .33s ease-out;
+		z-index: 2;
+
+		/*&:before,
+	    &:after {
+			content: '';
+			//position: absolute;
+			//top: 0; left: 0;
+			//width: 100%;
+			//height: 100%;
+			opacity: 0;
+			background: inherit;
+			z-index: -2;
+	    }
+
+	    &:before {
+			transform: rotate(60deg);
+	    }
+
+	    &:after {
+			transform: rotate(-60deg);
+	    }
+	}
+}*/
+/*.hexagon:hover.hover-background:after {
+	content: '';
+	transition: opacity .3s ease-out;
+}*/
+.hexagon {
+  display: block;
+  position: relative;
+  width: inherit;
+  height: inherit;
+  background-position: center;
+  background-repeat: no-repeat;
+  text-decoration: none;
+  z-index: 1;
+  /* Text style */
+  /* Make the hexagon */
+  /* Hover style */
+}
+.hexagon figcaption {
+  display: block;
+  line-height: calc(25vw * 0.57735026919);
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 0.33em;
+  font-family: Lato;
+  color: #f3f3f7;
+  transition: .33s opacity ease, .33s text-shadow ease;
+  z-index: 10;
+}
+.hexagon .hexagon-helper1,
+.hexagon .hexagon-helper2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  z-index: -1;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.hexagon .hexagon-helper1:before,
+.hexagon .hexagon-helper2:before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 200%;
+  background: inherit;
+  transition: .3s all ease-out;
+}
+.hexagon .hexagon-helper1 {
+  -webkit-transform: rotate(60deg);
+  transform: rotate(60deg);
+}
+.hexagon .hexagon-helper1:before {
+  content: '';
+  left: 0;
+  -webkit-transform-origin: left top;
+  -webkit-transform: rotate(-60deg) translate(-50%, 0);
+  transform-origin: left top;
+  transform: rotate(-60deg) translate(-50%, 0);
+}
+.hexagon .hexagon-helper2 {
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-60deg);
+}
+.hexagon .hexagon-helper2:before {
+  content: '';
+  right: 0;
+  -webkit-transform-origin: right top;
+  -webkit-transform: rotate(60deg) translate(50%, 0);
+  transform-origin: right top;
+  transform: rotate(60deg) translate(50%, 0);
+}
+.hexagon .hover-background {
+  opacity: 0;
+  transition: .33s opacity ease;
+}
+.hexagon:hover {
+  transition: .33s all ease;
+  text-shadow: rgba(243, 243, 247, 0.8) 0 0 1em;
+}
+.hexagon:hover .hover-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: inherit;
+  height: inherit;
+  background-color: #ee6633;
+  opacity: 0.5;
+  transition: .33s opacity ease;
+  z-index: 2;
+}
 
 /* -------------------- Footer section -------------------- */
 /* ------------------------------------------------------------------------------ */
@@ -800,4 +957,95 @@ canvas {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   margin-bottom: -0.75rem;
+}
+
+/* -------------------- Modal -------------------- */
+/* ------------------------------------------------------------------------------ */
+.modal-overlay {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -webkit-flex-wrap: wrap;
+  -webkit-align-items: center;
+  -webkit-align-content: space-around;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: space-around;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  z-index: 300;
+  background: rgba(0, 0, 0, 0.9);
+}
+
+.modal-overlay.ng-hide-add.ng-hide-add-active,
+.modal-overlay.ng-hide-remove.ng-hide-remove-active {
+  -webkit-transition: all .33s ease;
+  transition: all .33s ease;
+}
+
+.modal-overlay.ng-hide {
+  opacity: 0;
+}
+
+.modal-content {
+  width: 75%;
+  height: 100%;
+  margin: auto;
+  padding: 11.25rem 0;
+  overflow-y: auto;
+}
+
+.project-titles {
+  text-align: center;
+  color: #f3f3f7;
+}
+
+.project-titles h1 {
+  font-family: Lato, Raleway, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 7.5rem;
+  letter-spacing: 3.99rem;
+  text-indent: 3.99rem;
+}
+
+.project-titles h2 {
+  margin: 3rem 0 9rem 0;
+  font-family: Lato, Raleway, Roboto, "Helvetica Neue", sans-serif;
+  font-size: 4.5rem;
+  text-transform: none;
+}
+
+.project-description {
+  max-width: 90rem;
+  margin: 0 auto;
+  line-height: 1.48;
+  font-size: 2.25rem;
+  white-space: pre-line;
+  text-align: justify;
+}
+
+.project-showcase img {
+  max-width: 100%;
+}
+
+.project-link {
+  display: block;
+  max-width: 37.5rem;
+  margin: 0 auto;
+  padding: 2rem 4.5rem;
+  border: 0.3rem solid #f3f3f7;
+  text-align: center;
+  letter-spacing: 0.3rem;
+  -webkit-transition: all .33s ease;
+  transition: all .33s ease;
+}
+.project-link:hover {
+  background: #f3f3f7;
+  color: #0f0f18;
 }

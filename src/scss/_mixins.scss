@@ -56,13 +56,15 @@
 }
 
 
-.hexagon {
+/*.hexagon {
 	display: block;
 	position: relative;
 	width: inherit;
 	height: inherit;
 	background-position: center;
 	background-repeat: no-repeat;
+	z-index: 1;
+	background-image: url(public/img/projects/synappse.png);
 	//background-size: contain;
 
 	.hexagon-helper1,
@@ -73,6 +75,9 @@
 		height:100%;
 		overflow: hidden;
 		background: inherit;
+		z-index: -1;
+		-webkit-backface-visibility: hidden;
+				backface-visibility: hidden;
 	}
 
 	.hexagon-helper1:before,
@@ -109,7 +114,7 @@
 					transform: rotate(60deg) translate(50%, 0);
 		}
 	}
-}
+}*/
 
 .acceleration {
 	/*-webkit-transform: translateZ(0);

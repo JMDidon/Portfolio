@@ -1,0 +1,45 @@
+)]}',
+[
+	{
+		"id" : 0,
+		"title": "Content Square",
+		"resume": "6 months internship",
+		"description": "Lorem ipsum sic dolor amet ...",
+		"imgLink": "public/img/projects/content-square",
+		"imgExt": ".png",
+		"imgs": [
+			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
+			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
+			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " }
+		],
+		"link" : "http://www.content-square.fr"
+	},
+	{
+		"id" : 1,
+		"title": "Synappse",
+		"resume": "Small task management web application",
+		"description": "Pedagogic project done in Hetic. Its purpose was to offer a really simple way to manage project for people not knowing how to do it. In order to diminish the costs of the platform, we chose to use Dropbox as a backend holding the projects, tasks and files for our users. \n\n This project used the AngularJS framework to architecturate all the application and it was my first use of the framework. \n\n Technology :\t\n - AngularJS\t\n - Dropbox API",
+		"imgLink": "public/img/projects/synappse",
+		"imgExt": ".png",
+		"imgs": [
+			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
+			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
+			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " }
+		],
+		"link" : "https://synapp.se"
+	},
+	{
+		"id" : 2,
+		"title": "Whibo",
+		"resume": "Brainstorm with post-it with your team and use them to create quick mockups",
+		"description": "Whibo is a Franch start-up based in Paris. Its aim is to help the co-creation in company meetings, using for example a collaborative dashboard where all users can participate at once. \n\nOur task at Hetic was to make some research & development around the theme of this start-up. With our team, we came up with 2 little apps : the first one allows a pool of user to participate to the creation of \"posts-it\" with their smartphones, and all of them were displayed to a \"server\" machine. \nThe second one uses the posts-it of the first one to create quick Bootstrap-based mockups. \n\nTechnologies :\n- NodeJS \n- Socket.io \n- AngularJS \n- JQuery UI",
+		"imgLink": "public/img/projects/whibo",
+		"imgExt": ".png",
+		"imgs": [
+			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
+			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
+			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " }
+		],
+		"link" : "http://whibo.herokuapp.com"
+	}
+]
