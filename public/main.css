@@ -353,68 +353,68 @@ html {
 /* ------------------------------------------------------------------------------ */
 /*** Add prefix for transitions ***/
 /*.hexagon {
-	display: block;
-	position: relative;
-	width: inherit;
-	height: inherit;
-	background-position: center;
-	background-repeat: no-repeat;
-	z-index: 1;
-	background-image: url(public/img/projects/synappse.png);
-	//background-size: contain;
+    display: block;
+    position: relative;
+    width: inherit;
+    height: inherit;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+    background-image: url(public/img/projects/synappse.png);
+    //background-size: contain;
 
-	.hexagon-helper1,
-	.hexagon-helper2 {
-		position: absolute;
-		top: 0; left: 0;
-		width: 100%;
-		height:100%;
-		overflow: hidden;
-		background: inherit;
-		z-index: -1;
-		-webkit-backface-visibility: hidden;
-				backface-visibility: hidden;
-	}
+    .hexagon-helper1,
+    .hexagon-helper2 {
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%;
+        height:100%;
+        overflow: hidden;
+        background: inherit;
+        z-index: -1;
+        -webkit-backface-visibility: hidden;
+                backface-visibility: hidden;
+    }
 
-	.hexagon-helper1:before,
-	.hexagon-helper2:before {
-		content: '';
-		position: absolute;
-		width: 100%;
-		height: 200%;
-		background: inherit;
-	}
+    .hexagon-helper1:before,
+    .hexagon-helper2:before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 200%;
+        background: inherit;
+    }
 
-	.hexagon-helper1 {
-		-webkit-transform: rotate(60deg);
-				transform: rotate(60deg);
-		&:before {
-			content: '';
-			left: 0;
-			-webkit-transform-origin: left top;
-			-webkit-transform: rotate(-60deg) translate(-50%, 0);
-					transform-origin: left top;
-					transform: rotate(-60deg) translate(-50%, 0);
-		}
-	}
+    .hexagon-helper1 {
+        -webkit-transform: rotate(60deg);
+                transform: rotate(60deg);
+        &:before {
+            content: '';
+            left: 0;
+            -webkit-transform-origin: left top;
+            -webkit-transform: rotate(-60deg) translate(-50%, 0);
+                    transform-origin: left top;
+                    transform: rotate(-60deg) translate(-50%, 0);
+        }
+    }
 
-	.hexagon-helper2 {
-		-webkit-transform: rotate(-60deg);
-				transform: rotate(-60deg);
-		&:before {
-			content: '';
-			right: 0;
-			-webkit-transform-origin: right top;
-			-webkit-transform: rotate(60deg) translate(50%, 0);
-					transform-origin: right top;
-					transform: rotate(60deg) translate(50%, 0);
-		}
-	}
+    .hexagon-helper2 {
+        -webkit-transform: rotate(-60deg);
+                transform: rotate(-60deg);
+        &:before {
+            content: '';
+            right: 0;
+            -webkit-transform-origin: right top;
+            -webkit-transform: rotate(60deg) translate(50%, 0);
+                    transform-origin: right top;
+                    transform: rotate(60deg) translate(50%, 0);
+        }
+    }
 }*/
 .acceleration {
   /*-webkit-transform: translateZ(0);
-  	-ms-transform: translateZ(0);
-  		transform: translateZ(0);*/
+      -ms-transform: translateZ(0);
+          transform: translateZ(0);*/
   -webkit-transform: translate3d(0, 0, 0);
   -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
@@ -503,7 +503,7 @@ html {
   font-size: 2rem;
 }
 
-.uppercase, .headings, h1, h2, .main-nav-list li, .project-link {
+.uppercase, .headings, h1, h2, .main-nav-list li, .modal .project-link {
   text-transform: uppercase;
 }
 
@@ -511,7 +511,7 @@ html {
   font-family: Raleway, Lato, sans-serif;
 }
 
-.thin, .project-titles h2 {
+.thin, .modal .project-titles h2 {
   font-weight: 100;
 }
 
@@ -519,7 +519,7 @@ html {
   font-weight: 200;
 }
 
-.light, .project-description {
+.light, .project-container .project-text, .modal .project-description {
   font-weight: 300;
 }
 
@@ -527,7 +527,7 @@ html {
   font-weight: 400;
 }
 
-.bold, .about-hello, .project-titles h1 {
+.bold, .about-hello, .modal .project-titles h1 {
   font-weight: 700;
 }
 
@@ -758,179 +758,127 @@ canvas {
 
 /* -------------------- Work section -------------------- */
 /* ------------------------------------------------------------------------------ */
+#work {
+  background-image: url(img/grid.png);
+}
+
 .grid-container {
   display: -webkit-flex;
   display: flex;
   height: 100%;
-  -webkit-justify-content: space-around;
+  -webkit-justify-content: space-between;
   -webkit-flex-wrap: wrap;
   -webkit-align-items: center;
-  -webkit-align-content: space-around;
-  justify-content: space-around;
+  -webkit-align-content: space-between;
+  justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  align-content: space-around;
+  align-content: space-between;
   text-align: center;
 }
 
 .grid-unit {
   -webkit-flex-direction: row;
   flex-direction: row;
-}
-.grid-unit figure {
   width: 25vw;
-  height: calc(25vw * 0.57735026919);
+  height: calc(25vw * (3/4));
 }
-.grid-unit figure figcaption {
-  height: calc(25vw * 0.57735026919);
-  line-height: calc(25vw * 0.57735026919);
+.grid-unit.main-project {
+  width: 100%;
 }
 
-		/*.hexagon {
-	color: $dark-color;
-	background-image: url(http://www.placekitten.com/800/1280);
-	//background-color: #ee6633;
-	transition: all .33s ease-out;
-
-	line-height: calc(30vw * 0.57735026919);
-	text-align: center;
-	text-transform: uppercase;
-	text-decoration: none;
-	letter-spacing: 0.33em;
-	font-family: Lato;
-	color: #f3f3f7;
-
-	.hover-background {
-		opacity: 0;
-		transition: .33s opacity ease-out;
-	}
-
-	&:hover .hover-background {
-		position: absolute;
-		top: 0; left: 0;
-		width: inherit;
-		height: inherit;
-		//background-image: none;
-		background-color: #ee6633;
-		opacity: 0.5;
-		transition: opacity .33s ease-out;
-		z-index: 2;
-
-		/*&:before,
-	    &:after {
-			content: '';
-			//position: absolute;
-			//top: 0; left: 0;
-			//width: 100%;
-			//height: 100%;
-			opacity: 0;
-			background: inherit;
-			z-index: -2;
-	    }
-
-	    &:before {
-			transform: rotate(60deg);
-	    }
-
-	    &:after {
-			transform: rotate(-60deg);
-	    }
-	}
-}*/
-/*.hexagon:hover.hover-background:after {
-	content: '';
-	transition: opacity .3s ease-out;
-}*/
-.hexagon {
-  display: block;
-  position: relative;
-  width: inherit;
-  height: inherit;
-  background-position: center;
-  background-repeat: no-repeat;
-  text-decoration: none;
-  z-index: 1;
-  /* Text style */
-  /* Make the hexagon */
-  /* Hover style */
-}
-.hexagon figcaption {
-  display: block;
-  line-height: calc(25vw * 0.57735026919);
-  text-align: center;
-  text-transform: uppercase;
-  letter-spacing: 0.33em;
-  font-family: Lato;
-  color: #f3f3f7;
-  transition: .33s opacity ease, .33s text-shadow ease;
-  z-index: 10;
-}
-.hexagon .hexagon-helper1,
-.hexagon .hexagon-helper2 {
-  position: absolute;
-  top: 0;
-  left: 0;
+.project-container {
+  display: inline-block;
   width: 100%;
   height: 100%;
-  background: inherit;
-  z-index: -1;
-  overflow: hidden;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
+  background-size: contain;
+  background-position: center;
+  cursor: pointer;
 }
-.hexagon .hexagon-helper1:before,
-.hexagon .hexagon-helper2:before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 200%;
-  background: inherit;
-  transition: .3s all ease-out;
+.project-container .project-description-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-around;
+  height: 100%;
+  transition: all .15s ease;
 }
-.hexagon .hexagon-helper1 {
-  -webkit-transform: rotate(60deg);
-  transform: rotate(60deg);
-}
-.hexagon .hexagon-helper1:before {
-  content: '';
-  left: 0;
-  -webkit-transform-origin: left top;
-  -webkit-transform: rotate(-60deg) translate(-50%, 0);
-  transform-origin: left top;
-  transform: rotate(-60deg) translate(-50%, 0);
-}
-.hexagon .hexagon-helper2 {
-  -webkit-transform: rotate(-60deg);
-  transform: rotate(-60deg);
-}
-.hexagon .hexagon-helper2:before {
-  content: '';
-  right: 0;
-  -webkit-transform-origin: right top;
-  -webkit-transform: rotate(60deg) translate(50%, 0);
-  transform-origin: right top;
-  transform: rotate(60deg) translate(50%, 0);
-}
-.hexagon .hover-background {
+.project-container .project-description-wrapper.ng-enter, .project-container .project-description-wrapper.ng-leave.ng-leave-active {
   opacity: 0;
-  transition: .33s opacity ease;
 }
-.hexagon:hover {
-  transition: .33s all ease;
-  text-shadow: rgba(243, 243, 247, 0.8) 0 0 1em;
+.project-container .project-description-wrapper.ng-enter-active, .project-container .project-description-wrapper.ng-leave {
+  opacity: 1;
 }
-.hexagon:hover .hover-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: inherit;
-  height: inherit;
-  background-color: #ee6633;
-  opacity: 0.5;
-  transition: .33s opacity ease;
-  z-index: 2;
+.project-container .project-title {
+  width: 75%;
+  margin-bottom: 1rem;
+  font-size: 3.495rem;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+.project-container .project-text {
+  width: 75%;
+  margin-top: 1rem;
+  font-size: 1.995rem;
 }
 
+        /*.hexagon {
+    color: $dark-color;
+    background-image: url(http://www.placekitten.com/800/1280);
+    //background-color: #ee6633;
+    transition: all .33s ease-out;
+
+    line-height: calc(30vw * 0.57735026919);
+    text-align: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 0.33em;
+    font-family: Lato;
+    color: #f3f3f7;
+
+    .hover-background {
+        opacity: 0;
+        transition: .33s opacity ease-out;
+    }
+
+    &:hover .hover-background {
+        position: absolute;
+        top: 0; left: 0;
+        width: inherit;
+        height: inherit;
+        //background-image: none;
+        background-color: #ee6633;
+        opacity: 0.5;
+        transition: opacity .33s ease-out;
+        z-index: 2;
+
+        /*&:before,
+        &:after {
+            content: '';
+            //position: absolute;
+            //top: 0; left: 0;
+            //width: 100%;
+            //height: 100%;
+            opacity: 0;
+            background: inherit;
+            z-index: -2;
+        }
+
+        &:before {
+            transform: rotate(60deg);
+        }
+
+        &:after {
+            transform: rotate(-60deg);
+        }
+    }
+}*/
+/*.hexagon:hover.hover-background:after {
+    content: '';
+    transition: opacity .3s ease-out;
+}*/
 /* -------------------- Footer section -------------------- */
 /* ------------------------------------------------------------------------------ */
 .footer-wrapper {
@@ -982,46 +930,40 @@ canvas {
   opacity: 1;
   z-index: 300;
   background: rgba(0, 0, 0, 0.9);
+  transition: all .15s ease;
 }
-
-.modal-overlay.ng-hide-add.ng-hide-add-active,
-.modal-overlay.ng-hide-remove.ng-hide-remove-active {
-  -webkit-transition: all .33s ease;
-  transition: all .33s ease;
-}
-
-.modal-overlay.ng-hide {
+.modal-overlay.ng-enter, .modal-overlay.ng-leave.ng-leave-active {
   opacity: 0;
 }
+.modal-overlay.ng-enter-active, .modal-overlay.ng-leave {
+  opacity: 1;
+}
 
-.modal-content {
-  width: 75%;
+.modal {
   height: 100%;
   margin: auto;
   padding: 11.25rem 0;
   overflow-y: auto;
 }
-
-.project-titles {
+.modal .project-titles {
+  max-width: 85%;
+  margin: 0 auto;
   text-align: center;
   color: #f3f3f7;
 }
-
-.project-titles h1 {
+.modal .project-titles h1 {
   font-family: Lato, Raleway, Roboto, "Helvetica Neue", sans-serif;
   font-size: 7.5rem;
   letter-spacing: 3.99rem;
   text-indent: 3.99rem;
 }
-
-.project-titles h2 {
+.modal .project-titles h2 {
   margin: 3rem 0 9rem 0;
   font-family: Lato, Raleway, Roboto, "Helvetica Neue", sans-serif;
   font-size: 4.5rem;
   text-transform: none;
 }
-
-.project-description {
+.modal .project-description {
   max-width: 90rem;
   margin: 0 auto;
   line-height: 1.48;
@@ -1029,12 +971,15 @@ canvas {
   white-space: pre-line;
   text-align: justify;
 }
-
-.project-showcase img {
-  max-width: 100%;
+.modal .project-showcase {
+  margin: 7.5rem 0;
 }
-
-.project-link {
+.modal .project-showcase img {
+  display: block;
+  max-width: 75%;
+  margin: 0 auto;
+}
+.modal .project-link {
   display: block;
   max-width: 37.5rem;
   margin: 0 auto;
@@ -1045,7 +990,7 @@ canvas {
   -webkit-transition: all .33s ease;
   transition: all .33s ease;
 }
-.project-link:hover {
+.modal .project-link:hover {
   background: #f3f3f7;
   color: #0f0f18;
 }

@@ -1,45 +1,59 @@
 )]}',
 [
-	{
-		"id" : 0,
-		"title": "Content Square",
-		"resume": "6 months internship",
-		"description": "Lorem ipsum sic dolor amet ...",
-		"imgLink": "public/img/projects/content-square",
-		"imgExt": ".png",
-		"imgs": [
-			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
-			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
-			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " }
-		],
-		"link" : "http://www.content-square.fr"
-	},
-	{
-		"id" : 1,
-		"title": "Synappse",
-		"resume": "Small task management web application",
-		"description": "Pedagogic project done in Hetic. Its purpose was to offer a really simple way to manage project for people not knowing how to do it. In order to diminish the costs of the platform, we chose to use Dropbox as a backend holding the projects, tasks and files for our users. \n\n This project used the AngularJS framework to architecturate all the application and it was my first use of the framework. \n\n Technology :\t\n - AngularJS\t\n - Dropbox API",
-		"imgLink": "public/img/projects/synappse",
-		"imgExt": ".png",
-		"imgs": [
-			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
-			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
-			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " }
-		],
-		"link" : "https://synapp.se"
-	},
-	{
-		"id" : 2,
-		"title": "Whibo",
-		"resume": "Brainstorm with post-it with your team and use them to create quick mockups",
-		"description": "Whibo is a Franch start-up based in Paris. Its aim is to help the co-creation in company meetings, using for example a collaborative dashboard where all users can participate at once. \n\nOur task at Hetic was to make some research & development around the theme of this start-up. With our team, we came up with 2 little apps : the first one allows a pool of user to participate to the creation of \"posts-it\" with their smartphones, and all of them were displayed to a \"server\" machine. \nThe second one uses the posts-it of the first one to create quick Bootstrap-based mockups. \n\nTechnologies :\n- NodeJS \n- Socket.io \n- AngularJS \n- JQuery UI",
-		"imgLink": "public/img/projects/whibo",
-		"imgExt": ".png",
-		"imgs": [
-			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
-			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " },
-			{ "src": "public/img/projects/synappse", "ext": ".png", "alt": "Projects - " }
-		],
-		"link" : "http://whibo.herokuapp.com"
-	}
+    {
+        "id" : 0,
+        "isMain": true,
+        "title": "Tonefy",
+        "resume": "5th year Business plan @ HETIC",
+        "description": "For our last year at HETIC, we had to imagine an idea of business plan and develop it from A to Z (e.g marketing, business development, financial projections, research and development, design, brand, etc.). With my team, we have created Tonefy.\n\nTonefy is a pair of little Bluetooth dongles that allows the transmission of your instrument's sound signal to your smartphone in order to use it as an amplifier. Then, the sound is retrieved via the Tonefy app, which use a DSP (Digital Sound Processing) to amplify the sound and apply effects on it. As we use an emitter on the guitar and a receptor on the smartphone, the smartphone's Bluetooth is available to use for streaming the sound to speakers and you can play with your instrument anywhere !\n\nI was in charge of the software part and I developped an Android prototype with a 3 band equalizer, an overdrive and a flanger effect. \n\nTechnologies:\n- Android (Java/XML and NDK (Native Development Kit in C++))\n- Superpowered (C++ DSP library)\n- OpenSL ES (Android native audio interface)",
+        "backgroundImg": "url(public/img/projects/tonefy-logo.jpg)",
+        "imgs": [
+            { "src": "public/img/projects/tonefy-guitar.jpg", "alt": "Projects - Tonefy, product plugged into guitar" },
+            { "src": "public/img/projects/tonefy-android-app.png", "alt": "Projects - Tonefy, Android application" }
+        ],
+        "link" : "http://tonefy.audio",
+        "backgroundHoverColor": "rgba(216, 67, 21, .88)"
+    },
+    {
+        "id" : 1,
+        "isMain": false,
+        "title": "Content Square",
+        "resume": "Internship and work",
+        "description": "Content Square is the company I am currently working for. Its purpose is to analyse and improve the user experience of its clients to enhance their ROI. To do so, it bases its solution on Big Data to objectively choose the best options for a website.\n\nI work with the application team, developping the software used both by our clients and by Content Square's staff.\n\nTechnologies: \n- AngularJS\n- Grunt / Bower \n- Karma / Protractor / PHPUnit\n- Symfony\n- JQuery \n\n- Redshift",
+        "backgroundImg": "url(public/img/projects/content-square-logo.png)",
+        "imgs": [
+            { "src": "public/img/projects/synappse.png", "alt": "Projects - " },
+            { "src": "public/img/projects/synappse.png", "alt": "Projects - " },
+            { "src": "public/img/projects/synappse.png", "alt": "Projects - " }
+        ],
+        "link" : "http://www.contentsquare.com",
+        "backgroundHoverColor": "rgba(45, 45, 45, .88)"
+    },
+    {
+        "id" : 2,
+        "isMain": false,
+        "title": "Synappse",
+        "resume": "Small task management web application",
+        "description": "Pedagogic project done in Hetic. Its purpose was to offer a really simple way to manage project for people not knowing how to do it. In order to diminish the costs of the platform, we chose to use Dropbox as a backend holding the projects, tasks and files for our users. \n\n This project used the AngularJS framework to architecturate all the application and it was my first use of the framework. \n\n Technologies:\t\n - AngularJS\t\n - Dropbox API",
+        "backgroundImg": "url(public/img/projects/synappse-logo.png)",
+        "imgs": [
+            { "src": "public/img/projects/synappse-general.png", "alt": "Projects - Synappse, model of the interface" },
+            { "src": "public/img/projects/synappse-landing.png", "alt": "Projects - Synappse, landing page of the app" }
+        ],
+        "backgroundHoverColor": "rgba(92, 73, 117, .88)"
+    },
+    {
+        "id" : 3,
+        "isMain": false,
+        "title": "Whibo",
+        "resume": "Brainstorm with post-it with your team and use them to create quick mockups",
+        "description": "Whibo is a French start-up based in Paris. Its aim is to help the co-creation in company meetings, using for example a collaborative dashboard where all users can participate at once. \n\nOur task at Hetic was to make some research & development around the theme of this start-up. With our team, we came up with 2 little apps : the first one allows a pool of user to participate to the creation of \"posts-it\" with their smartphones, and all of them were displayed to a \"server\" machine. \nThe second one uses the posts-it of the first one to create quick Bootstrap-based mockups. \n\nTechnologies:\n- NodeJS \n- Socket.io \n- AngularJS \n- JQuery UI",
+        "backgroundImg": "url(public/img/projects/whibo-post-it-board.jpg)",
+        "imgs": [
+            { "src": "public/img/projects/whibo-posts-it.png", "alt": "Projects - Whibo, post-it creation and displaying example on computer and mobile." },
+            { "src": "public/img/projects/whibo-mockup.png", "alt": "Projects - Whibo, bootstrap-based mockup example." }
+        ],
+        "link" : "http://whibo.herokuapp.com",
+        "backgroundHoverColor": "rgba(253, 198, 42, .88)"
+    }
 ]

@@ -6,7 +6,7 @@
 //@prepros-append Portfolio.stickyHeader.directive.js
 
 (function() {
-	'use strict';
+    'use strict';
 
-	angular.module('Portfolio', ['ngAnimate']);
+    angular.module('Portfolio', ['ngAnimate']);
 })();

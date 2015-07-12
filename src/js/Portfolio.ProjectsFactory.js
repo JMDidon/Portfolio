@@ -1,31 +1,31 @@
 (function() {
-	'use strict';
+    'use strict';
 
-	angular
-		.module('Portfolio')
-		.factory('ProjectsFactory', ProjectsFactory);
+    angular
+        .module('Portfolio')
+        .factory('ProjectsFactory', ProjectsFactory);
 
-	ProjectsFactory.$inject = ['$http'];
+    ProjectsFactory.$inject = ['$http'];
 
-	function ProjectsFactory($http) {
-		return {
-			getProjects: getProjects
-		};
+    function ProjectsFactory($http) {
+        return {
+            getProjects: getProjects
+        };
 
-		function getProjects() {
-			return $http.get('public/json/projects.json')
-				 .then(returnProject)
-				 .catch(returnError);
-		}
+        function getProjects() {
+            return $http.get('public/json/projects.json')
+                 .then(returnProject)
+                 .catch(returnError);
+        }
 
-		function returnProject(response) {
-			return response.data;
-		}
+        function returnProject(response) {
+            return response.data;
+        }
 
-		function returnError(error) {
-			console.log('Error while retrieving projects: ', error);
-			return error;
-		}
-	}
+        function returnError(error) {
+            console.error('Error while retrieving projects: ', error);
+            return error;
+        }
+    }
 
 })();

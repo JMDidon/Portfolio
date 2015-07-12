@@ -22,7 +22,7 @@ function smoothScroll(element, targetName, duration) {
     var distance = target - startTop;
 
     // Based on http://en.wikipedia.org/wiki/Smoothstep
-    function smooth_step(start, end, point) {
+    function smoothStep(start, end, point) {
         if (point <= start) { return 0; }
         if (point >= end) { return 1; }
         var x = (point - start) / (end - start); // interpolation
@@ -35,7 +35,7 @@ function smoothScroll(element, targetName, duration) {
         var previousTop = element.scrollTop;
 
         // This is like a think function from a game loop
-        function scroll_frame() {
+        function scrollFrame() {
             if (element.scrollTop != previousTop) {
                 reject('Interrupted');
                 return;
@@ -43,7 +43,7 @@ function smoothScroll(element, targetName, duration) {
 
             // Set the scrollTop for this frame
             var now = Date.now();
-            var point = smooth_step(startTime, endTime, now);
+            var point = smoothStep(startTime, endTime, now);
             var frameTop = parseInt(Math.round(startTop + (distance * point)));
             element.scrollTop = frameTop;
 
@@ -64,10 +64,10 @@ function smoothScroll(element, targetName, duration) {
             previousTop = element.scrollTop;
 
             // Schedule next frame for execution
-            setTimeout(scroll_frame, 0);
+            setTimeout(scrollFrame, 0);
         }
 
         // Boostrap the animation process
-        setTimeout(scroll_frame, 0);
+        setTimeout(scrollFrame, 0);
     });
 }
