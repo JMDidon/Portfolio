@@ -118,18 +118,6 @@
                 <article class="section-wrapper">
                     <ul class="grid-container">
                         <li class="grid-unit" ng-repeat="project in Main.projects" ng-class="{ 'main-project': project.isMain }">
-                            <!--<figure>
-                                <a href="#" class="hexagon hover-background" ng-click="Main.openProject(project, $event)">
-                                    <figcaption>{{ project.title }}</figcaption>
-                                    <div class="hexagon-helper1">
-                                        <span class="hover-background"></span>
-                                    </div>
-                                    <div class="hexagon-helper2">
-                                        <span class="hover-background"></span>
-                                    </div>
-                                    <span class="hover-background"></span>
-                                </a>
-                            </figure>-->
                             <a class="project-container"
                                 ng-click="Main.openProject(project, $event)"
                                 ng-style="{ 'background': 'no-repeat center/cover {{ project.backgroundImg }}' }"

@@ -6,9 +6,21 @@ $unit: $base*1.5;
 
 @import "_normalize.scss";
 @import "_reset.scss";
-@import "_mixins.scss";
 @import "_typography.scss";
 
+
+@mixin transitions($property: all, $duration: 0.3s, $timing: ease) {
+    -webkit-transition: $property $duration $timing;
+       -moz-transition: $property $duration $timing;
+        -ms-transition: $property $duration $timing;
+         -o-transition: $property $duration $timing;
+            transition: $property $duration $timing;
+}
+
+.absolute-center-content {
+    -webkit-transform: translate3d(-50%,-50%,0);
+            transform: translate3d(-50%,-50%,0);
+}
 
 /* -------------------- Variables -------------------- */
 /* ------------------------------------------------------------------------------ */
@@ -51,9 +63,9 @@ canvas {
     text-transform: uppercase;
 
     @extend .absolute-center-content;
-    transition: text-shadow 1s ease;
+    @include transitions(text-shadow, 1s, ease);
     &:hover {
-        transition: text-shadow 1s ease;
+        @include transitions(text-shadow, 1s, ease);
         text-shadow: transparentize($light-color, 0.2) 0 0 1em;
     }
 }
@@ -90,11 +102,11 @@ canvas {
         display: inline-block;
         height: 5*$unit;
         padding: $unit;
-        transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        @include transitions(all, 600ms, cubic-bezier(0.175, 0.885, 0.32, 1.275));
         &:hover {
             -webkit-transform: translate3d(0, $base, 0);
             transform: translate3d(0, $base, 0);
-            transition: all 600ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            @include transitions(all, 600ms, cubic-bezier(0.175, 0.885, 0.32, 1.275));
         }
     }
 }
@@ -166,10 +178,10 @@ canvas {
     @extend .headings;
     a {
         display: block;
-        transition: background .1s ease;
+        @include transitions(background ,.1s, ease);
         &:hover {
             background: lighten($background-color, 10%);
-            transition: background .1s ease;
+            @include transitions(background ,.1s, ease);
             text-shadow: transparentize($light-color, 0.2) 0 0 1em;
         }
     }
@@ -276,7 +288,7 @@ canvas {
         align-items: center;
         align-content: space-around;
         height: 100%;
-        transition: all .15s ease;
+        @include transitions(all ,.15s, ease);
 
         // Starting and ending state
         &.ng-enter,
@@ -307,161 +319,6 @@ canvas {
     }
 }
 
-/*.hexagon {
-    color: $dark-color;
-    background-image: url(http://www.placekitten.com/800/1280);
-    //background-color: #ee6633;
-    transition: all .33s ease-out;
-
-    line-height: calc(30vw * 0.57735026919);
-    text-align: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    letter-spacing: 0.33em;
-    font-family: Lato;
-    color: #f3f3f7;
-
-    .hover-background {
-        opacity: 0;
-        transition: .33s opacity ease-out;
-    }
-
-    &:hover .hover-background {
-        position: absolute;
-        top: 0; left: 0;
-        width: inherit;
-        height: inherit;
-        //background-image: none;
-        background-color: #ee6633;
-        opacity: 0.5;
-        transition: opacity .33s ease-out;
-        z-index: 2;
-
-        /*&:before,
-        &:after {
-            content: '';
-            //position: absolute;
-            //top: 0; left: 0;
-            //width: 100%;
-            //height: 100%;
-            opacity: 0;
-            background: inherit;
-            z-index: -2;
-        }
-
-        &:before {
-            transform: rotate(60deg);
-        }
-
-        &:after {
-            transform: rotate(-60deg);
-        }
-    }
-}*/
-
-/*.hexagon:hover.hover-background:after {
-    content: '';
-    transition: opacity .3s ease-out;
-}*/
-
-// .hexagon {
-//   display: block;
-//   position: relative;
-//   width: inherit;
-//   height: inherit;
-//   background-image: url(http://www.placekitten.com/800/1280);
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   text-decoration: none;
-//   z-index: 1;
-
-//   /* Text style */
-//   figcaption {
-//     display: block;
-//     line-height: calc(25vw * 0.57735026919);
-//     text-align: center;
-//     text-transform: uppercase;
-//     letter-spacing: 0.33em;
-//     font-family: Lato;
-//     color: #f3f3f7;
-//     transition: .33s opacity ease, .33s text-shadow ease;
-//     z-index: 10;
-//   }
-
-
-//   /* Make the hexagon */
-//   .hexagon-helper1,
-//   .hexagon-helper2 {
-//     position: absolute;
-//     top: 0; left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: inherit;
-//     z-index: -1;
-//     overflow: hidden;
-//     -webkit-backface-visibility: hidden;
-//             backface-visibility: hidden;
-//   }
-
-//   .hexagon-helper1:before,
-//   .hexagon-helper2:before,  {
-//     content: '';
-//     position: absolute;
-//     width: 100%;
-//     height: 200%;
-//     background: inherit;
-//     transition: .3s all ease-out;
-//   }
-
-//   .hexagon-helper1 {
-//     -webkit-transform: rotate(60deg);
-//             transform: rotate(60deg);
-//     &:before {
-//       content: '';
-//       left: 0;
-//       -webkit-transform-origin: left top;
-//       -webkit-transform: rotate(-60deg) translate(-50%, 0);
-//               transform-origin: left top;
-//               transform: rotate(-60deg) translate(-50%, 0);
-//     }
-//   }
-
-//   .hexagon-helper2 {
-//     -webkit-transform: rotate(-60deg);
-//             transform: rotate(-60deg);
-//     &:before {
-//       content: '';
-//       right: 0;
-//       -webkit-transform-origin: right top;
-//       -webkit-transform: rotate(60deg) translate(50%, 0);
-//               transform-origin: right top;
-//               transform: rotate(60deg) translate(50%, 0);
-//     }
-//   }
-
-//   /* Hover style */
-//   .hover-background {
-//     opacity: 0;
-//     transition: .33s opacity ease;
-//   }
-
-//   &:hover {
-//     transition: .33s all ease;
-//     text-shadow: transparentize(#f3f3f7, .2) 0 0 1em;
-//   }
-
-//   &:hover .hover-background {
-//     position: absolute;
-//     top: 0; left: 0;
-//     width: inherit;
-//     height: inherit;
-//     background-color: #ee6633;
-//     opacity: 0.5;
-//     transition: .33s opacity ease;
-//     z-index: 2;
-//   }
-// }
-
 /* -------------------- Footer section -------------------- */
 /* ------------------------------------------------------------------------------ */
 
@@ -475,9 +332,9 @@ canvas {
     a {
         display: inline-block;
         height: 100%;
-        transition: all .1s ease;
+        @include transitions(all ,.1s, ease);
         &:hover {
-            transition: all .1s ease;
+            @include transitions(all ,.1s, ease);
             text-shadow: transparentize($light-color, 0.2) 0 0 1em;
         }
     }
@@ -515,7 +372,7 @@ canvas {
     z-index: 300;
     background: rgba(0, 0, 0, 0.90);
 
-    transition: all .15s ease;
+    @include transitions(all ,.15s, ease);
 
     // Starting and ending state
     &.ng-enter,
@@ -588,8 +445,7 @@ canvas {
         border: .3*$base solid $light-color;
         text-align: center;
         letter-spacing: .3*$base;
-        -webkit-transition: all .33s ease;
-                transition: all .33s ease;
+        @include transitions(all ,.33s, ease);
         &:hover {
             background: $light-color;
             color: $dark-color;

@@ -32,4 +32,4 @@ html		{ font-family: $sans; font-size: 62.5%; } /* 1em = 10px */
 body		{ font-size: 1.6*$base; } /* Default font size : 16 px */
 h1			{ @extend .biggest, .headings; }
 h2			{ @extend .bigger, .headings; }
-a 			{ color: white; text-decoration: none; @include transitions(all, .1s, ease, 0); }
+a 			{ color: white; text-decoration: none; }
