@@ -244,6 +244,10 @@ canvas {
 /* ------------------------------------------------------------------------------ */
 #work {
     background-image: url(img/grid.png);
+
+    .section-wrapper {
+        padding-top: 6.5*$unit;
+    }
 }
 
 .grid-container {

@@ -663,6 +663,9 @@ canvas {
 #work {
   background-image: url(img/grid.png);
 }
+#work .section-wrapper {
+  padding-top: 9.75rem;
+}
 
 .grid-container {
   display: -webkit-flex;
