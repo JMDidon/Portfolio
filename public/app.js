@@ -44,7 +44,7 @@
         }
 
         function returnError(error) {
-            console.log('Error while retrieving projects: ', error);
+            console.error('Error while retrieving projects: ', error);
             return error;
         }
     }
@@ -172,15 +172,12 @@
         function link (scope, element, attributes, ngModel) {
 
             scope.close = function (e) {
-                console.log('Modal directive, close:', e);
                 e.preventDefault();
             };
 
             ngModel.$render = function() {
                 scope.project = ngModel.$viewValue;
             };
-
-            console.log('Modal directive, init : ', scope, element, attributes);
         }
 
     }
@@ -323,8 +320,8 @@
         return directive;
 
         function link(scope, element, attributes) {
-            window.addEventListener('scroll', throttle(function() {
-                if(window.scrollY > scope.slideSize.height) {
+            window.addEventListener('scroll', throttle(function () {
+                if (window.scrollY > scope.slideSize.height) {
                     document.querySelector('.main-header').classList.add('stickied')
                 }
                 else {
@@ -336,7 +333,7 @@
         function throttle(fn, threshold) {
             var last,
                 deferTimer;
-            return function() {
+            return function () {
                 var context = this,
                     args = arguments,
                     now = +new Date();
