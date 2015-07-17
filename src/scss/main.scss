@@ -239,6 +239,42 @@ canvas {
     color: inherit;
 }
 
+.about-links-wrapper {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: center;
+            justify-content: center;
+    margin-top: 4*$unit;
+
+    li {
+        display: inline-block;
+        vertical-align: top;
+        margin: 0 2.5*$unit;
+    }
+
+    .about-link {
+        @include transitions(opacity ,.1s, ease);
+        display: block;
+        width: 5*$unit;
+        height: 5*$unit;
+        color: $dark-color;
+        cursor: pointer;
+
+        img {
+            max-width: 100%;
+        }
+
+        &.mail-link {
+            @extend .bold;
+            font-size: 5*$unit;
+        }
+
+        &:hover {
+            opacity: .75;
+        }
+    }
+}
+
 
 /* -------------------- Work section -------------------- */
 /* ------------------------------------------------------------------------------ */
@@ -344,12 +380,16 @@ canvas {
     }
 }
 
-.icon-github {
+.icon-wrapper {
     width: 2*$unit;
     height: 2*$unit;
     margin-left: $base/2;
     margin-right: $base/2;
     margin-bottom: -$unit/2;
+}
+
+#icon-github path.icon-github {
+    fill: #FFF;
 }
 
 

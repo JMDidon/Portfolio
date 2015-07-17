@@ -33,7 +33,6 @@
                 vm.modalOpened = true;
                 vm.openedProject = project;
 
-                console.log('project, e :', vm.openedProject, e);
                 e.preventDefault();
             };
 

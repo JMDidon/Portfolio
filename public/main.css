@@ -405,7 +405,7 @@ html {
   font-weight: 400;
 }
 
-.bold, .about-hello, .modal .project-titles h1 {
+.bold, .about-hello, .about-links-wrapper .about-link.mail-link, .modal .project-titles h1 {
   font-weight: 700;
 }
 
@@ -658,6 +658,40 @@ canvas {
   color: inherit;
 }
 
+.about-links-wrapper {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  margin-top: 6rem;
+}
+.about-links-wrapper li {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 3.75rem;
+}
+.about-links-wrapper .about-link {
+  -webkit-transition: opacity 0.1s ease;
+  -moz-transition: opacity 0.1s ease;
+  -ms-transition: opacity 0.1s ease;
+  -o-transition: opacity 0.1s ease;
+  transition: opacity 0.1s ease;
+  display: block;
+  width: 7.5rem;
+  height: 7.5rem;
+  color: #0f0f18;
+  cursor: pointer;
+}
+.about-links-wrapper .about-link img {
+  max-width: 100%;
+}
+.about-links-wrapper .about-link.mail-link {
+  font-size: 7.5rem;
+}
+.about-links-wrapper .about-link:hover {
+  opacity: .75;
+}
+
 /* -------------------- Work section -------------------- */
 /* ------------------------------------------------------------------------------ */
 #work {
@@ -761,12 +795,16 @@ canvas {
   text-shadow: rgba(243, 243, 247, 0.8) 0 0 1em;
 }
 
-.icon-github {
+.icon-wrapper {
   width: 3rem;
   height: 3rem;
   margin-left: 0.5rem;
   margin-right: 0.5rem;
   margin-bottom: -0.75rem;
+}
+
+#icon-github path.icon-github {
+  fill: #FFF;
 }
 
 /* -------------------- Modal -------------------- */

@@ -19,12 +19,11 @@
         "isMain": false,
         "title": "Content Square",
         "resume": "Internship and work",
-        "description": "Content Square is the company I am currently working for. Its purpose is to analyse and improve the user experience of its clients to enhance their ROI. To do so, it bases its solution on Big Data to objectively choose the best options for a website.\n\nI work with the application team, developping the software used both by our clients and by Content Square's staff.\n\nTechnologies: \n- AngularJS\n- Grunt / Bower \n- Karma / Protractor / PHPUnit\n- Symfony\n- JQuery \n\n- Redshift",
+        "description": "Content Square is the company I am currently working for. Its purpose is to analyse and improve the user experience of its clients to enhance their ROI. To do so, it bases its solution on Big Data to objectively choose the best options for a website.\n\nI work with the application team, developping the software used both by our clients and by Content Square's staff. It taught me how to use AngularJS in a professional environment.\n\nTechnologies: \n- AngularJS\n- Grunt / Bower \n- Karma / Protractor / PHPUnit\n- Symfony\n- JQuery \n- Redshift\n- Wordpress",
         "backgroundImg": "url(public/img/projects/content-square-logo.png)",
         "imgs": [
-            { "src": "public/img/projects/synappse.png", "alt": "Projects - " },
-            { "src": "public/img/projects/synappse.png", "alt": "Projects - " },
-            { "src": "public/img/projects/synappse.png", "alt": "Projects - " }
+            { "src": "public/img/projects/content-square-heatmaps.jpg", "alt": "Projects - Content Square, heatmaps" },
+            { "src": "public/img/projects/content-square-reporting.jpg", "alt": "Projects - Content Square, UXTesting reporting" }
         ],
         "link" : "http://www.contentsquare.com",
         "backgroundHoverColor": "rgba(45, 45, 45, .88)"

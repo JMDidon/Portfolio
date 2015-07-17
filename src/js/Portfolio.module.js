@@ -1,3 +1,4 @@
+//@prepros-append ga.js
 //@prepros-append Portfolio.config.js
 //@prepros-append Portfolio.ProjectsFactory.js
 //@prepros-append Portfolio.controllers.js

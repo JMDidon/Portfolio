@@ -26,8 +26,8 @@
          *  Set element's size to window's dimensions
          */
         function resizeSlides(element, scope) {
-            var width  = window.innerWidth;
-            var height = window.innerHeight;
+            var width  = document.documentElement.clientWidth || document.body.clientWidth;
+            var height = document.documentElement.clientHeight || document.body.clientHeight;
 
             element.style.width  = width  + 'px';
             element.style.height = height + 'px';
