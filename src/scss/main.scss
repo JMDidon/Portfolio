@@ -219,6 +219,7 @@ canvas {
     left: 50%;
     margin: 0;
     padding: 0;
+    max-width: 1200px;
     @extend .absolute-center-content;
 
     p {
@@ -236,7 +237,35 @@ canvas {
 
 .about-description {
     font-size: 2*$unit;
+    line-height: 1.33;
     color: inherit;
+
+    .about-description-link {
+        position: relative;
+        display: inline-block;
+        padding-bottom: .33*$base;
+        color: $dark-color;
+        @extend .bold;
+
+        &:after {
+            content: '';
+            position: absolute;
+            left: 0; bottom: 0;
+            width: 100%;
+            height: 0;
+            border-bottom: 2px solid $dark-color;
+            -webkit-transform: scaleX(0);
+                -ms-transform: scaleX(0);
+                    transform: scaleX(0);
+            @include transitions(transform, .15s, ease-in);
+        }
+
+        &:hover:after {
+            -webkit-transform: scaleX(1.05);
+                -ms-transform: scaleX(1.05);
+                    transform: scaleX(1.05);
+        }
+    }
 }
 
 .about-links-wrapper {
@@ -244,19 +273,19 @@ canvas {
     display: flex;
     -webkit-justify-content: center;
             justify-content: center;
-    margin-top: 4*$unit;
+    margin-top: 2*$unit;
 
     li {
         display: inline-block;
         vertical-align: top;
-        margin: 0 2.5*$unit;
+        margin: 0 1.66*$unit;
     }
 
     .about-link {
         @include transitions(opacity ,.1s, ease);
         display: block;
-        width: 5*$unit;
-        height: 5*$unit;
+        width: 4*$unit;
+        height: 4*$unit;
         color: $dark-color;
         cursor: pointer;
 
@@ -266,7 +295,7 @@ canvas {
 
         &.mail-link {
             @extend .bold;
-            font-size: 5*$unit;
+            font-size: 4*$unit;
         }
 
         &:hover {
@@ -321,12 +350,18 @@ canvas {
     cursor: pointer;
 
     .project-description-wrapper {
+        display: -webkit-flex;
         display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-        align-content: space-around;
+        -webkit-justify-content: center;
+        -webkit-flex-wrap: wrap;
+        -webkit-flex-direction: column;
+        -webkit-align-items: center;
+        -webkit-align-content: space-around;
+                justify-content: center;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                align-content: space-around;
         height: 100%;
         @include transitions(all ,.15s, ease);
 
