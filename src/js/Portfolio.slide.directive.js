@@ -29,6 +29,13 @@
             var width  = document.documentElement.clientWidth || document.body.clientWidth;
             var height = document.documentElement.clientHeight || document.body.clientHeight;
 
+            // On mobile Chrome, the address bar disappears and the size of the window changes.
+            // Don't update the slide sizes if that the case
+            if (scope.slideSize && (scope.slideSize.width === width && scope.slideSize.height !== height)) {
+                console.log('Should not resize');
+                return;
+            }
+
             element.style.width  = width  + 'px';
             element.style.height = height + 'px';
 

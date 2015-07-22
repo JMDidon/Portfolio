@@ -311,7 +311,9 @@ canvas {
     background-image: url(img/grid.png);
 
     .section-wrapper {
-        padding-top: 6.5*$unit;
+        width: 100%;
+        height: 100%;
+        padding: 5*$unit 0 0 0;
     }
 }
 
@@ -319,22 +321,14 @@ canvas {
     display: -webkit-flex;
     display: flex;
     height: 100%;
-    -webkit-justify-content: space-between;
     -webkit-flex-wrap: wrap;
-    -webkit-align-items: center;
-    -webkit-align-content: space-between;
-            justify-content: space-between;
             flex-wrap: wrap;
-            align-items: center;
-            align-content: space-between;
     text-align: center;
 }
 
 .grid-unit {
-    -webkit-flex-direction: row;
-            flex-direction: row;
-    width: 25vw;
-    height: calc(25vw * (3/4));
+    width: calc(100vw / 3);
+    height: calc(50vh - 3.75rem);
 
     &.main-project {
         width: 100%;
@@ -531,4 +525,66 @@ canvas {
         }
     }
 
+}
+
+@media screen and (max-width: 1024px) {
+    .main-title h1 {
+        font-size: 3.5*$unit;
+    }
+
+    .main-title h2 {
+        font-size: 1.5*$unit;
+    }
+
+    .about-hello {
+        font-size: 4*$unit;
+    }
+
+    .about-description {
+        font-size: 1.5*$unit;
+    }
+
+    .grid-unit {
+        width: 100vw;
+    }
+
+    .footer-wrapper {
+        height: auto;
+        padding: 2*$unit 0;
+        line-height: 1.75;
+    }
+
+    .modal {
+        padding: 3*$unit 0;
+
+        .project-titles {
+            max-width: 90%;
+
+            h1 {
+                font-size: 3*$unit;
+                letter-spacing: $base;
+                text-indent: $base;
+            }
+
+            h2 {
+                font-size: 2*$unit;
+                margin: 2*$unit 0 3*$unit 0;
+            }
+        }
+
+        .project-description {
+            max-width: 90%;
+            font-size: 2*$base;
+        }
+
+        .project-showcase img {
+            max-width: 90%;
+        }
+
+        .project-link {
+            padding: $unit $base;
+            max-width: 90%;
+            line-height: 1.33;
+        }
+    }
 }

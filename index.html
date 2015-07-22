@@ -67,7 +67,7 @@
                 <canvas id="canvas" class="acceleration">The canvas element is not supported by your browser !</canvas>
                 <hgroup class="main-title">
                     <h1>
-                        <span class="main-firstname">Jean-Michel</span>
+                        <span class="main-firstname">{{ Main.isMobile ? 'JM' : 'Jean-Michel' }}</span>
                         <span  class="main-lastname">Didon</span>
                     </h1>
                     <h2>Fullstack developer</h2>
@@ -82,12 +82,12 @@
             </section>
 
             <!-- Header -->
-            <header sticky-header class="main-header">
+            <header sticky-header class="main-header" ng-if="!Main.isMobile">
                 <nav class="main-nav">
                     <ul class="main-nav-list">
                         <li class="main-header-title">
                             <a href="#home" ng-click="Main.doScroll('#home', $event)">
-                                <h1 class="main-header-title-names">Jean-Michel <span class="main-header-title-lastname">Didon</span></h1>
+                                <h1 class="main-header-title-names">{{ Main.isMobile ? 'JM' : 'Jean-Michel'}} <span class="main-header-title-lastname">Didon</span></h1>
                             </a>
                         </li>
                         <li>
@@ -107,9 +107,9 @@
                         <p class="about-hello">Hello!</p>
                         <p class="about-description">
                             I finished my studies at
-                            <a class="about-description-link" href="http://www.hetic.net/" target="_blank" alt="Hétic, la grande école de l'Internet">HÉTIC</a>
+                            <a ng-click="Main.sendGAEvent('link', 'hetic-link')" class="about-description-link" href="http://www.hetic.net/" target="_blank" alt="Hétic, la grande école de l'Internet">HÉTIC</a>
                             and I am currently working at
-                            <a class="about-description-link" href="http://www.contentsquare.com/" target="_blank" alt="Content Square, Analyze – Test – Optimize
+                            <a ng-click="Main.sendGAEvent('link', 'content-square-link')" class="about-description-link" href="http://www.contentsquare.com/" target="_blank" alt="Content Square, Analyze – Test – Optimize
 your customer journey and website">Content Square</a>, Paris.
                         </p>
                         <p class="about-description">
@@ -117,17 +117,17 @@ your customer journey and website">Content Square</a>, Paris.
                         </p>
                         <ul class="about-links-wrapper">
                             <li>
-                                <a class="about-link" href="http://fr.linkedin.com/in/jmdidon" target="_blank">
+                                <a ng-click="Main.sendGAEvent('link', 'linkedin-link')" class="about-link" href="http://fr.linkedin.com/in/jmdidon" target="_blank">
                                     <img src="public/img/linkedin-logo.svg" alt="Jean-Michel Didon's LinkedIn Profile">
                                 </a>
                             </li>
                             <li>
-                                <a class="about-link" href="https://github.com/JMDidon/" target="_blank">
+                                <a ng-click="Main.sendGAEvent('link', 'github-profile-link')" class="about-link" href="https://github.com/JMDidon/" target="_blank">
                                     <img src="public/img/github-logo.svg" alt="Jean-Michel Didon's Github Profile">
                                 </a>
                             </li>
                             <li>
-                                <a class="about-link mail-link" href="mailto:jeanmichel.didon@outlook.com" target="_blank">
+                                <a ng-click="Main.sendGAEvent('link', 'mail-link')" class="about-link mail-link" href="mailto:jeanmichel.didon@outlook.com" target="_blank">
                                     @
                                 </a>
                             </li>
@@ -137,7 +137,7 @@ your customer journey and website">Content Square</a>, Paris.
             </section>
 
             <!-- Work -->
-            <section slide id="work">
+            <section id="work">
                 <article class="section-wrapper">
                     <ul class="grid-container">
                         <li class="grid-unit" ng-repeat="project in Main.projects" ng-class="{ 'main-project': project.isMain }">
@@ -162,7 +162,7 @@ your customer journey and website">Content Square</a>, Paris.
             <footer class="footer-wrapper">
                 <p>
                     Made by JMDidon. Full code disponible at
-                    <a href="https://github.com/JMDidon/Portfolio">
+                    <a target="_blank" href="https://github.com/JMDidon/Portfolio" Main.sendGAEvent('link', 'github-portfolio-link')>
                         Github
                         <svg class="icon-wrapper">
                             <use xlink:href="#icon-github"></use>

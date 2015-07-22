@@ -19,14 +19,16 @@
         return directive;
 
         function link(scope, element, attributes) {
-            window.addEventListener('scroll', throttle(function () {
-                if (window.scrollY > scope.slideSize.height) {
-                    document.querySelector('.main-header').classList.add('stickied')
-                }
-                else {
-                    document.querySelector('.main-header').classList.remove('stickied');
-                }
-            }, 30));
+            if (!scope.Main.isMobile) {
+                window.addEventListener('scroll', throttle(function () {
+                    if (window.scrollY > scope.slideSize.height) {
+                        document.querySelector('.main-header').classList.add('stickied')
+                    }
+                    else {
+                        document.querySelector('.main-header').classList.remove('stickied');
+                    }
+                }, 30));
+            }
         }
 
         function throttle(fn, threshold) {

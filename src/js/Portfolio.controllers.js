@@ -16,8 +16,7 @@
             vm.projects     = [];
             vm.modalOpened  = false;
 
-            /* Detect Retina screen in order to display high-res images */
-            vm.isRetina     = window.devicePixelRatio > 1;
+            vm.isMobile     = (document.documentElement.clientWidth || document.body.clientWidth) < 1024;
 
             /* In order to scroll the right element, we need to detect Firefox users */
             vm.scrollElem   = navigator.userAgent.indexOf('Firefox') > -1 ? document.documentElement : document.body;
@@ -32,6 +31,7 @@
             vm.openProject = function (project, e) {
                 vm.modalOpened = true;
                 vm.openedProject = project;
+                vm.sendGAEvent('project', project.title);
 
                 e.preventDefault();
             };
@@ -39,6 +39,10 @@
             vm.close = function () {
                 vm.modalOpened = false;
                 vm.openedProject = undefined;
+            };
+
+            vm.sendGAEvent = function (category, label) {
+                ga('send', 'event', category, 'click', label);
             };
 
             /* Get projects from service */
