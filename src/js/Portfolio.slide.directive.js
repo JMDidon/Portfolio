@@ -30,9 +30,8 @@
             var height = document.documentElement.clientHeight || document.body.clientHeight;
 
             // On mobile Chrome, the address bar disappears and the size of the window changes.
-            // Don't update the slide sizes if that the case
+            // Don't update the slide sizes if that is the case
             if (scope.slideSize && (scope.slideSize.width === width && scope.slideSize.height !== height)) {
-                console.log('Should not resize');
                 return;
             }
 

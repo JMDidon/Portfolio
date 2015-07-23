@@ -67,6 +67,14 @@
         BackgroundAnimation.core.isRunning = false;
     };
 
+    BackgroundAnimation.reset = function () {
+        BackgroundAnimation.config.dots = [];
+        BackgroundAnimation.workers.clearCanvas();
+        BackgroundAnimation.setup.setCanvas();
+        BackgroundAnimation.setup.createDots();
+        BackgroundAnimation.workers.renderGraphics();
+    };
+
     /**
      *  Core internals for the animation
      */
@@ -115,8 +123,8 @@
          */
         setCanvas: function() {
             BackgroundAnimation.canvas = document.querySelector('#canvas');
-            BackgroundAnimation.canvas.width = window.innerWidth;
-            BackgroundAnimation.canvas.height = window.innerHeight;
+            BackgroundAnimation.canvas.width = document.documentElement.clientWidth || document.body.clientWidth;
+            BackgroundAnimation.canvas.height = document.documentElement.clientHeight || document.body.clientHeight;
             BackgroundAnimation.canvas.ctx = BackgroundAnimation.canvas.getContext('2d');
             BackgroundAnimation.canvas.ctx.fillStyle = '#2AA1DD';
             BackgroundAnimation.canvas.ctx.lineWidth = 0.1;
@@ -244,11 +252,7 @@
      *  Redraw on resize
      */
     window.addEventListener('resize', function (e) {
-        BackgroundAnimation.config.dots = [];
-        BackgroundAnimation.workers.clearCanvas();
-        BackgroundAnimation.setup.setCanvas();
-        BackgroundAnimation.setup.createDots();
-        BackgroundAnimation.workers.renderGraphics();
+        BackgroundAnimation.reset();
     });
 
 })();
